@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Laptop Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <header>
+            <h1>Laptop Database</h1>
+            <p class="description">
+                Search for a laptop by brand and model. Entries are unique per model.
+                <br>
+                <small>e.g., Dell Latitude 4120 (includes variants like TouchScreen or 360)</small>
+            </p>
+
+            <div class="search-section card">
+                <form action="add.php" method="post" class="search-form">
+                    <div class="form-group">
+                        <label for="brand_search">Brand</label>
+                        <select id="brand_search" name="brand" required>
+                            <option value=""></option>
+                            <option value="HP">HP</option>
+                            <option value="DELL">DELL</option>
+                            <option value="Lenovo">Lenovo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model_search">Model</label>
+                        <input type="text" id="model_search" name="model" required placeholder="e.g. Latitude 5420">
+                    </div>
+                    <div class="form-group submit-group">
+                        <input type="submit" value="Search" class="btn-primary">
+                    </div>
+                </form>
+                <p class="note">If the laptop cannot be found, you can create a new entry below.</p>
+            </div>
+        </header>
+
+        <section class="entry-section">
+            <h2>New Entry</h2>
+            <div class="card">
+                <form action="add.php" method="post" class="entry-form grid-form">
+                    <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <select id="brand" name="brand" required>
+                            <option value=""></option>
+                            <option value="HP">HP</option>
+                            <option value="DELL">DELL</option>
+                            <option value="Lenovo">Lenovo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" id="model" name="model" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="battery">Battery</label>
+                        <input type="text" id="battery" name="battery" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="special_features">Features</label>
+                        <input type="text" id="special_features" name="special_features" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ram">RAM</label>
+                        <input type="text" id="ram" name="ram" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="storage">Storage</label>
+                        <input type="text" id="storage" name="storage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpu_type">CPU Type</label>
+                        <input type="text" id="cpu_type" name="cpu_type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpu_speed">CPU Speed</label>
+                        <input type="text" id="cpu_speed" name="cpu_speed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cpu_cores">CPU Cores</label>
+                        <input type="text" id="cpu_cores" name="cpu_cores" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="bios_state">BIOS State</label>
+                        <input type="text" id="bios_state" name="bios_state" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="os">OS</label>
+                        <input type="text" id="os" name="os" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ram_type">RAM Type</label>
+                        <input type="text" id="ram_type" name="ram_type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="battery_type">Battery Type</label>
+                        <input type="text" id="battery_type" name="battery_type" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ac_adapter">AC Adapter</label>
+                        <input type="text" id="ac_adapter" name="ac_adapter" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <input type="submit" value="Add Laptop" class="btn-success">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="preview-section">
+            <h2>Preview & Labels</h2>
+            <div class="preview-grid">
+                <!-- Example 1 -->
+                <div class="preview-card">
+                    <div class="raw-data">
+                        <ul>
+                            <li><b>Brand:</b> Dell</li>
+                            <li><b>Model:</b> Latitude 3520</li>
+                            <li><b>Battery:</b> YES</li>
+                            <li><b>Ram:</b> 8GB <b>Storage:</b> 256GB</li>
+                            <li><b>Features:</b> Broken Hinge, TouchScreen</li>
+                            <li><b>CPU:</b> i5-1165G7 Hexa Core 2.8GHz</li>
+                            <li><b>Bios:</b> Unlocked <b>OS:</b> Windows 11</li>
+                        </ul>
+                    </div>
+                    <div class="label-preview">
+                        <h3>Label Preview</h3>
+                        <div class="label-content">
+                            <div class="lbl-header">Dell Latitude 3520</div>
+                            <div class="lbl-row">Battery✅ Broken Hinge, TouchScreen</div>
+                            <div class="lbl-row">8GB 256GB NVMe</div>
+                            <div class="lbl-cpu">i5-1165G7</div>
+                            <div class="lbl-sub">Hexa Core 2.8GHz</div>
+                            <div class="lbl-footer">Bios Unlocked | Windows 11</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Example 2 -->
+                <div class="preview-card">
+                    <div class="raw-data">
+                        <ul>
+                            <li><b>Brand:</b> HP</li>
+                            <li><b>Model:</b> EliteBook x360 1030 G2</li>
+                            <li><b>Battery:</b> NO</li>
+                            <li><b>Ram:</b> 8GB</li>
+                            <li><b>Features:</b> -</li>
+                            <li><b>CPU:</b> i5-7200U Hexa Core 2.5GHz</li>
+                            <li><b>Bios:</b> Unlocked</li>
+                        </ul>
+                    </div>
+                    <div class="label-preview">
+                        <h3>Label Preview</h3>
+                        <div class="label-content">
+                            <div class="lbl-header">HP EliteBook x360 1030 G2</div>
+                            <div class="lbl-row">Battery❌</div>
+                            <div class="lbl-row">8GB</div>
+                            <div class="lbl-cpu">i5-7200U</div>
+                            <div class="lbl-sub">Dual Core 2.5GHz</div>
+                            <div class="lbl-footer">Bios Unlocked</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="info-section">
+            <div class="card">
+                <h3>Label Logic</h3>
+                <ul class="info-list">
+                    <li>Brand Model Number</li>
+                    <li>Battery, Special Features (GPU, 360, TouchScreen, etc.)</li>
+                    <li>Ram / Storage size and type</li>
+                    <li>CPU Type</li>
+                    <li>CPU Speed / Cores</li>
+                    <li>Bios: state(Locked, Unlocked), OS</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="spare-parts-section">
+            <h2>Laptop Spare Parts</h2>
+            <p>Check what kinds of parts fit the most popular make and models.</p>
+            <div class="card">
+                <ul class="parts-list">
+                    <li>RAM Type and Speeds</li>
+                    <li>Compatible Battery Models</li>
+                    <li>A/C Adapter</li>
+                    <li>Wifi Card ETC.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="data-points-section">
+            <h2>Data Points</h2>
+            <p>All the different data points tracked:</p>
+            <div class="tags-container">
+                <span class="tag">USB-A ports</span>
+                <span class="tag">Thunderbolt</span>
+                <span class="tag">HDMI</span>
+                <span class="tag">DisplayPorts</span>
+                <span class="tag">SD Card</span>
+                <span class="tag">M.2 slots</span>
+                <span class="tag">SATA ports</span>
+                <span class="tag">USB-C</span>
+                <span class="tag">Ethernet</span>
+                <span class="tag">Bluetooth</span>
+                <span class="tag">Wireless</span>
+                <span class="tag">TouchScreen</span>
+                <span class="tag">360</span>
+                <span class="tag">GPU</span>
+                <span class="tag">Screen Size</span>
+                <span class="tag">Resolution</span>
+                <span class="tag">Refresh Rate</span>
+                <span class="tag">Screen Type</span>
+                <span class="tag">Aspect Ratio</span>
+                <span class="tag">Compatible Panels</span>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <h2>Database Status</h2>
+            <div class="status-grid">
+                <div class="status-item">Label Gen: Active</div>
+                <div class="status-item">Search: Need Implement</div>
+                <div class="status-item">CRUD: Need Implement</div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
