@@ -1,0 +1,20 @@
+Ok.
+
+
+I want to lock in the make and model. 
+
+I am seeing the computer's bios screen as I am testing the machine.
+
+Im working with the same make and model, the only variables for the job are the CPU, the bios state and the defects.
+
+I mean I got my system down good, but I am still doing it mechanically, this system is very prone to human error. 
+
+    Lock in the make and model, have a drop down for the CPU, based on the model currently being worked on.
+    Then have a way to tell the CPU version [I got i5, i7, i3, and AMD A8 on this current batch].
+    Then a ay to change the bios state. then the common aditional info (defects in this case.)
+
+Work with defaults and then have very good way to change the variables.
+
+I hope I am making sense.
+
+future self here ya go! 1/6/2026 4:09PM
